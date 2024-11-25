@@ -1,0 +1,245 @@
+:host {
+  --fl-primary: #ff5722;
+  --fl-success: #4caf50;
+  --fl-danger: #e53935;
+  --fl-warn: #ffa000;
+  --fl-dark: #303030;
+  --fl-info: #42a5f5;
+  --fl-normal: rgba(0, 0, 0, 0.12);
+  --fl-delete: #bf360c;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.disabled .btn-text {
+  color: #fff !important;
+}
+
+.fl-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  width: max-content;
+  min-width: 80px;
+}
+.fl-btn.width100 {
+  width: 100%;
+}
+.fl-btn.x-small {
+  padding: 4px 8px;
+  height: 24px;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+}
+
+.fl-btn.small {
+  height: 32px;
+}
+
+.fl-btn.large {
+  height: 48px;
+  font-size: 16px !important;
+}
+
+.fill {
+  background: var(--fl-primary);
+  color: #ffffff;
+  border: 0;
+}
+
+.outline {
+  background: #ffffff;
+  border: 1px solid;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.fl-primary.fill {
+  background: var(--fl-primary);
+}
+
+.fl-success.fill {
+  background: var(--fl-success);
+}
+
+.fl-delete.fill {
+  background: var(--fl-delete);
+}
+.fl-danger.fill {
+  background: var(--fl-danger);
+}
+
+.fl-warn.fill {
+  background: var(--fl-warn);
+}
+
+.fl-dark.fill {
+  background: var(--fl-dark);
+}
+.fl-info.fill {
+  background: var(--fl-info);
+}
+.fl-normal.outline {
+  border-color: var(--fl-normal);
+}
+.fl-primary.outline {
+  border-color: var(--fl-primary);
+}
+
+.fl-success.outline {
+  border-color: var(--fl-success);
+}
+
+.fl-delete.outline {
+  border-color: var(--fl-delete);
+}
+
+.fl-danger.outline {
+  border-color: var(--fl-danger);
+}
+
+.fl-warn.outline {
+  border-color: var(--fl-warn);
+}
+
+.fl-dark.outline {
+  border-color: var(--fl-dark);
+}
+
+.fl-info.outline {
+  border-color: var(--fl-info);
+}
+
+.fl-btn span.fl-prefix,
+.fl-btn span.fl-suffix {
+  display: flex;
+}
+.fl-btn span.fl-prefix {
+  margin-right: 8px;
+}
+.fl-btn span.fl-suffix {
+  margin-left: 8px;
+}
+.fl-btn .btn-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.fl-normal .btn-text {
+  color: rgba(0, 0, 0, 0.6);
+}
+.fl-normal:hover .btn-text {
+  color: rgba(0, 0, 0, 0.87);
+}
+.fl-btn .btn-text.x-small {
+  font-size: 12px !important;
+}
+
+.fl-primary.box-shadow,
+.fl-primary:hover {
+  box-shadow: 0px 15px 30px -5px rgb(244, 81, 30, 0.2);
+}
+
+.fl-success.box-shadow,
+.fl-success:hover {
+  box-shadow: 0px 15px 30px -5px rgba(76, 175, 80, 0.2);
+}
+
+.fl-delete.box-shadow,
+.fl-delete:hover {
+  box-shadow: 0px 15px 30px -5px rgb(191, 54, 12, 0.2);
+}
+
+.fl-danger.box-shadow,
+.fl-danger:hover {
+  box-shadow: 0px 15px 30px -5px rgba(229, 57, 53, 0.2);
+}
+
+.fl-warn.box-shadow,
+.fl-warn:hover {
+  box-shadow: 0px 15px 30px -5px rgba(255, 160, 0, 0.2);
+}
+
+.fl-dark.box-shadow,
+.fl-dark:hover {
+  box-shadow: 0px 15px 30px -5px rgba(48, 48, 48, 0.2);
+}
+
+.fl-info.box-shadow,
+.fl-info:hover {
+  box-shadow: 0px 15px 30px -5px rgba(66, 165, 245, 0.2);
+}
+
+.btn-text.loading-btn,
+.loading-suffix,
+.loading-prefix {
+  opacity: 0.1;
+}
+.fill .loader {
+  border: 3px solid white;
+}
+
+.outline .loader {
+  border: 3px solid black;
+}
+
+.fill .loader::after {
+  background: white;
+}
+
+.outline .loader::after {
+  background: black;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border-right-color: transparent !important;
+  border-radius: 50%;
+  position: absolute;
+  animation: loader-rotate 1s linear infinite;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.loader::after {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  position: absolute;
+  top: -1px;
+  left: 11px;
+}
+
+@keyframes loader-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button.fl-btn.disabled {
+  background: rgba(0, 0, 0, 0.38) !important;
+  color: #fff !important;
+  box-shadow: unset;
+  border: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}

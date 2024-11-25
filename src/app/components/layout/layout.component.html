@@ -1,0 +1,109 @@
+<div class="layout">
+  <div>
+    <div class="top-bar">
+      <ng-container *ngIf="user['role'] === 1">
+        <div class="dashboard">Patient Dashboard</div>
+      </ng-container>
+      <ng-container *ngIf="user['role'] === 2">
+        <div class="dashboard">Caregiver Dashboard</div>
+        <div class="route-grp">
+          <div>
+            <a
+              id="caregiver-view"
+              name="caregiver-view"
+              [routerLink]="['caregiver']"
+              [routerLinkActive]="['selectedcaregiverlink']"
+              class="caregiver-link"
+              #caregiverLink="routerLinkActive"
+            >
+              Caregiver
+            </a>
+          </div>
+          <div>
+            <a
+              id="details-view"
+              name="details-view"
+              [routerLink]="['caregiver-unassign']"
+              [routerLinkActive]="['selectedcaregiverlink']"
+              class="caregiver-link"
+              #detailsLink="routerLinkActive"
+              >Unassign Caregiver</a
+            >
+          </div>
+          <div>
+            <a
+              id="details-view"
+              name="details-view"
+              [routerLink]="['caregiver-assign']"
+              [routerLinkActive]="['selectedcaregiverlink']"
+              class="caregiver-link"
+              #detailsLink="routerLinkActive"
+              >Assign Caregiver</a
+            >
+          </div>
+          <div>
+            <a
+              id="appointment-view"
+              name="appointment-view"
+              [routerLink]="['caregiver-appointment']"
+              [routerLinkActive]="['selectedcaregiverlink']"
+              class="caregiver-link"
+              #appointmentLink="routerLinkActive"
+              >Appointment</a
+            >
+          </div>
+          <div>
+            <a
+              id="appointment-view"
+              name="appointment-view"
+              [routerLink]="['caregiver-update-appointment']"
+              [routerLinkActive]="['selectedcaregiverlink']"
+              class="caregiver-link"
+              #appointmentLink="routerLinkActive"
+              >Update Appointment</a
+            >
+          </div>
+        </div>
+      </ng-container>
+      <div class="user-detail">
+        <div class="user-grp">
+          <div class="user-img ig" id="main-profile-img"></div>
+          <div class="user-email">
+            <div class="user-name">
+              {{ user["full_name"] }}
+            </div>
+            <div class="user-email">
+              {{ user["email"] }}
+            </div>
+          </div>
+        </div>
+        <div class="logout-btn" (click)="logout()">
+          <div class="logout-icon">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.6827 11.3626C12.7952 11.4751 12.9377 11.5276 13.0802 11.5276C13.2227 11.5276 13.3652 11.4751 13.4777 11.3626L15.3977 9.44258C15.6152 9.22508 15.6152 8.86508 15.3977 8.64758L13.4777 6.72758C13.2602 6.51008 12.9002 6.51008 12.6827 6.72758C12.4652 6.94508 12.4652 7.30508 12.6827 7.52258L13.6425 8.48242H7.32031C7.01281 8.48242 6.75781 8.73742 6.75781 9.04492C6.75781 9.35242 7.01281 9.60742 7.32031 9.60742H13.6428L12.6827 10.5676C12.4652 10.7851 12.4652 11.1451 12.6827 11.3626Z"
+                fill="rgba(0, 0, 0, 0.6)"
+              />
+              <path
+                d="M8.82007 15.5625C4.95757 15.5625 2.25757 12.8625 2.25757 9C2.25757 5.1375 4.95757 2.4375 8.82007 2.4375C9.12757 2.4375 9.38257 2.6925 9.38257 3C9.38257 3.3075 9.12757 3.5625 8.82007 3.5625C5.61757 3.5625 3.38257 5.7975 3.38257 9C3.38257 12.2025 5.61757 14.4375 8.82007 14.4375C9.12757 14.4375 9.38257 14.6925 9.38257 15C9.38257 15.3075 9.12757 15.5625 8.82007 15.5625Z"
+                fill="rgba(0, 0, 0, 0.6)"
+              />
+            </svg>
+          </div>
+          <div class="logout">Logout</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

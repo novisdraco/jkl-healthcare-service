@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "jkl-healthcare-services-frontend": {
+    "jkl-healthcare-service-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/jkl-healthcare-services-frontend",
+            "outputPath": "dist/jkl-healthcare-service-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "jkl-healthcare-services-frontend:build:production"
+              "buildTarget": "jkl-healthcare-service-frontend:build:production"
             },
             "development": {
-              "buildTarget": "jkl-healthcare-services-frontend:build:development"
+              "buildTarget": "jkl-healthcare-service-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7ef59464-49c0-4246-b20a-3cdc74596c67"
   }
 }

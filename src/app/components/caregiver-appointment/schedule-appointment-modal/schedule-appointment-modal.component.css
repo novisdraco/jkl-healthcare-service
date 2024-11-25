@@ -1,0 +1,325 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: 448px;
+  min-width: 448px;
+  z-index: 2000;
+  /* visibility: visible; */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  overflow: auto;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+.modal-show {
+  visibility: visible;
+}
+
+.modal-effect .modal-content {
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-show.modal-effect .modal-content {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  background: #ffffff;
+  box-shadow: 0px 15px 80px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(80px);
+  border-radius: 16px;
+  overflow: auto;
+}
+
+.gap-8px {
+  gap: 8px;
+}
+
+.header-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* text-align: center; */
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.header-icon {
+  padding-left: 32px;
+}
+
+.border-right {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+.border-left {
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 16px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.apply-modal-padding {
+  padding: 0 24px 24px;
+}
+
+.close-icon svg:hover path {
+  fill-opacity: 0.87;
+}
+
+.main-block {
+  padding: 24px;
+}
+
+.label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.87);
+  padding-bottom: 8px;
+}
+
+.action-block .action-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+span.cancel-btn {
+  margin-right: 16px;
+}
+
+.action-block {
+  padding: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dropdown-block {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  height: 40px;
+  align-items: center;
+  font-size: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+}
+.arrow {
+  padding-right: 8px;
+}
+.placeholder {
+  padding-left: 8px;
+}
+.arrow.active svg {
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+.arrow svg {
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+
+.box-text {
+  width: 100%;
+  padding: 0px 8px;
+  display: table;
+  border-collapse: separate;
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 40px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.name-input-box {
+  display: flex;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 8px;
+  text-align: left;
+  align-items: center;
+}
+
+input[type="date" i] {
+  width: 100%;
+  padding: 5px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 8px;
+  text-align: left;
+  font-family: "Roboto" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+input[type="time" i] {
+  width: 100%;
+  padding: 5px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 8px;
+  text-align: left;
+  font-family: "Roboto" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: rgba(0, 0, 0, 0.87);
+}
+/*
+        ##Device = Desktops
+        ##Screen = 1281px to higher resolution desktops
+      */
+
+@media (min-width: 1281px) {
+  .modal {
+    min-width: 650px !important;
+    max-width: 650px !important;
+  }
+}
+
+/*
+        ##Device = Laptops, Desktops
+        ##Screen = B/w 1025px to 1280px
+      */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .modal {
+    min-width: 650px !important;
+    max-width: 650px !important;
+  }
+}
+
+/*
+        ##Device = Low Resolution Tablets, Mobiles (Landscape)
+        ##Screen = B/w 481px to 767px
+      */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .modal {
+    min-width: 448px !important;
+    max-width: 448px !important;
+  }
+}
+
+/* Surface Duo */
+@media (min-width: 540px) and (max-width: 766px) {
+  .modal {
+    min-width: 448px !important;
+    max-width: 448px !important;
+  }
+}
+
+/*
+        ##Device = Most of the Smartphones Mobiles (Portrait)
+        ##Screen = B/w 320px to 479px
+      */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .modal {
+    min-width: 335px !important;
+    max-width: 335px !important;
+  }
+  .header-icon {
+    padding-left: 30px;
+  }
+  .modal-header {
+    width: 335px;
+  }
+  .main-block {
+    height: 250px !important;
+    overflow: auto;
+  }
+  .modal-body {
+    width: 335px;
+  }
+}
+
+/* Galaxy Fold */
+@media (max-width: 320px) {
+  .modal {
+    min-width: 325px !important;
+    max-width: 325px !important;
+  }
+  .header-icon {
+    padding-left: 30px;
+  }
+  .modal-header {
+    width: 325px;
+  }
+  .main-block {
+    height: 250px !important;
+    overflow: auto;
+  }
+  .modal-body {
+    width: 325px;
+  }
+}
+
+/*
+        ##Device = Tablets, Ipads (portrait)
+        ##Screen = B/w 768px to 1024px
+      */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal {
+    min-width: 650px !important;
+    max-width: 650px !important;
+  }
+}
+
+/*
+        ##Device = Tablets, Ipads (landscape)
+        ##Screen = B/w 768px to 1024px
+      */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .modal {
+    min-width: 650px !important;
+    max-width: 650px !important;
+  }
+}

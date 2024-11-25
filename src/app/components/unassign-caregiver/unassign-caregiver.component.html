@@ -1,0 +1,88 @@
+<div class="patient-layout">
+  <!-- <div class="filter-add">
+      <div class="add-btn">
+        <button class="plus-btn" (click)="addCaregiver = true">
+          Add Caregiver
+        </button>
+      </div>
+    </div> -->
+  <div class="table">
+    <div class="overflow-auto patient-table-block">
+      <div class="main-block">
+        <div class="table-block" [ngStyle]="getHeightStyle()">
+          <table class="patient-table">
+            <thead>
+              <tr class="header-row">
+                <ng-container *ngFor="let column of displayedColumns">
+                  <th
+                    class="mid-width"
+                    [ngStyle]="{
+                      width: caregiverColumnList[column]['width'] + '%'
+                    }"
+                  >
+                    <span>{{ caregiverColumnList[column]["text"] }}</span>
+                  </th>
+                </ng-container>
+                <th class="action-head">
+                  <span>Action</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="!onGoingRequest && caregiverDetails.length">
+                <tr
+                  class="header-title"
+                  *ngFor="let caregiver of caregiverDetails; index as i"
+                >
+                  <td class="table__data__font-style user-name">
+                    {{ caregiver["caregiver_name"] | titlecase }}
+                  </td>
+                  <td class="table__data__font-style email">
+                    {{
+                      caregiver["availability"] === 0
+                        ? "Not Available"
+                        : "Available"
+                    }}
+                  </td>
+                  <td class="table__data__font-style email">
+                    {{ caregiver["patient_name"] }}
+                  </td>
+                  <td class="table__data__font-style email">
+                    {{ caregiver["medical_record"] }}
+                  </td>
+                  <td
+                    class="table__data__font-style lastbody-column action-btn"
+                  >
+                    <div style="display: flex; gap: 8px; margin-right: 8px">
+                      <!-- Edit Icon SVG -->
+                      <div
+                        class="edit"
+                        style="cursor: pointer"
+                        (click)="assignCaregiver(caregiver)"
+                      >
+                        <fl-button class="fl-primary">Assign</fl-button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ng-container *ngIf="addCaregiver">
+    <app-add-caregiver-modal
+      (closeModalEvent)="createCaregiver($event)"
+    ></app-add-caregiver-modal>
+  </ng-container> -->
+
+<!-- <ng-container *ngIf="updateCaregiver">
+  <app-update-caregiver-modal
+    [data]="updateCaregiverData"
+    (closeModalEvent)="updateCaregiverClose($event)"
+  ></app-update-caregiver-modal>
+</ng-container> -->

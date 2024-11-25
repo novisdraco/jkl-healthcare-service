@@ -1,0 +1,36 @@
+<div class="modal-container" id="add-patient-modal-container">
+  <div
+    class="modal modal-effect"
+    [ngClass]="{
+      'modal-show': showModal,
+    }"
+  >
+    <div class="modal-content">
+      <div class="heading-title">
+        Are you sure that you want to delete the selected
+        <span>patient</span>?
+      </div>
+      <div class="heading-secondary">This cannot be undone!</div>
+      <div class="action-block">
+        <div fxFlex="100" fxLayout="row">
+          <div class="action-btn">
+            <span class="cancel-btn">
+              <fl-button
+                [outline]="true"
+                class="fl-normal"
+                (click)="closeModal()"
+              >
+                Cancel
+              </fl-button>
+            </span>
+            <span>
+              <fl-button class="fl-primary" (click)="deletePatient()">
+                {{ confirmBtnText }}
+              </fl-button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

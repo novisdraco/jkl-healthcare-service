@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #000;
+  margin: 0;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.display-hidden {
+  display: none !important;
+}
+
+.pd-tp-8 {
+  padding-top: 8px;
+}
+
+#add-patient-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}

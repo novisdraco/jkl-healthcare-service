@@ -1,0 +1,24 @@
+<div (click)="checkDisabled($event)">
+  <button
+    class="fl-btn {{ fill ? ' fill' : '' }}{{ outline ? ' outline' : '' }}{{ loading ? ' cursor-not-allowed' : '' }}{{
+      size ? ' ' + size : ''
+    }}{{ disabled ? ' disabled' : '' }}"
+    [ngClass]="class ? class : ''"
+    [ngStyle]="backgroundColor.length && { 'background-color': backgroundColor, 'box-shadow': applyHover }"
+    [disabled]="disabled"
+  >
+    <span *ngIf="flPrefix" class="fl-prefix{{ loading ? ' loading-prefix' : '' }}">
+      <ng-container [ngTemplateOutlet]="flPrefix"></ng-container>
+    </span>
+    <span
+      class="btn-text{{ size ? ' ' + size : '' }}"
+      [ngClass]="{ 'loading-btn': loading, 'no-margin': flPrefix || flSuffix, disabled: disabled }"
+    >
+      <ng-content></ng-content>
+    </span>
+    <span *ngIf="loading" class="loader"></span>
+    <span *ngIf="flSuffix" class="fl-suffix{{ loading ? ' loading-suffix' : '' }}">
+      <ng-container [ngTemplateOutlet]="flSuffix"></ng-container>
+    </span>
+  </button>
+</div>
